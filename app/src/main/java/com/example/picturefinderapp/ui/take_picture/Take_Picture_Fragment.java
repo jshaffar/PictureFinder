@@ -1,4 +1,4 @@
-package com.example.picturefinderapp.ui.home;
+package com.example.picturefinderapp.ui.take_picture;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.picturefinderapp.R;
 
-public class HomeFragment extends Fragment {
+public class Take_Picture_Fragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private Take_Picture_Model takePictureModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        takePictureModel =
+                ViewModelProviders.of(this).get(Take_Picture_Model.class);
+        View root = inflater.inflate(R.layout.fragment_take_picture, container, false);
+        final TextView textView = root.findViewById(R.id.text_take_picture);
+        takePictureModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
